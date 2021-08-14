@@ -59,6 +59,7 @@ async def on_message(message):
                             #svg2png(bytestring=open('first.svg', 'w').read(),write_to='first.png')
                             #data = io.BytesIO(await resp.read())
                             embed=discord.Embed(title="Tier 1 BNDT", url="https://dashleague.games/teams/bndt/", description="", color=0x1CEEEE)
+                            embed.set_thumbnail(url="./first")
                             embed.add_field(name=playerName, value=statType + ": " + stat, inline=False)
                             await message.channel.send(embed=embed)
                         # await message.channel.send(file=discord.File('./first.png'))
