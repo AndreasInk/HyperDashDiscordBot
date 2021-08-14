@@ -9,7 +9,7 @@ import requests
 
 import xml.dom.minidom
 
-from cairosvg import svg2png
+#from cairosvg import svg2png
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -55,7 +55,7 @@ async def on_message(message):
                     print(stat)
                     if float(stat) > 1:
                         open('first.svg', 'w').write(open('first.svg').read().replace('>Name</tspan>','>'+ playerName + '</tspan>'))
-                        svg2png(bytestring=open('first.svg', 'w').read(),write_to='first.png')
+                        #svg2png(bytestring=open('first.svg', 'w').read(),write_to='first.png')
                         #data = io.BytesIO(await resp.read())
                         await message.channel.send(file=discord.File('./first.png'))
                 except ValueError:
